@@ -7,10 +7,10 @@ import javascript
 /**
 * Holds if a function is longer than 10 lines
 */
-predicate isLongerThanTen(ASTNode node) {
-  exists(ASTNode node and node.getNumLines() > 10)
+predicate isLongerThanTen(Function function) {
+  exists(function.getNumLines() > 10)
 }
 
-from ASTNode node
-where isLongerThanTen(node)
-select node, "is longer than 10 lines"
+from Function function
+where isLongerThanTen(function)
+select function, "is longer than 10 lines"
