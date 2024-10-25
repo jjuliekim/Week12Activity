@@ -4,13 +4,6 @@
 */
 import javascript
 
-/**
-* Holds if a function is longer than 10 lines
-*/
-predicate isLongerThanTen(Function function) {
-  exists(function.getNumLines() > 10)
-}
-
 from Function function
-where isLongerThanTen(function)
+where function.getNumLines() > 10
 select function, "is longer than 10 lines"
