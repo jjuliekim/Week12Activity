@@ -1,3 +1,9 @@
+/**
+ * @description Find all tests
+ * @kind problem
+ * @id javascript/find-all-tests
+ * @problem.severity recommendation
+ */
 import javascript
 
 /**
@@ -28,5 +34,5 @@ predicate calls(Function caller, Function callee) {
 }
 
 from Function test, Function callee
-where isTest(test) and calls(test, callee) and callee.getCalleeName = "pressActionKey"
+where isTest(test) and calls(test, callee) and callee.getName() = "pressActionKey"
 select test, "test calls 'pressActionKey' function"
