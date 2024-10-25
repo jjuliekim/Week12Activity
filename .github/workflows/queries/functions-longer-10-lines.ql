@@ -8,7 +8,7 @@ import javascript
 * Holds if a function is longer than 10 lines
 */
 predicate isLongerThanTen(ASTNode node) {
-  exists(ASTNode node | node.getNumLines() > 10)
+  exists(ASTNode node and node.getNumLines() > 10)
 }
 
 from ASTNode node
